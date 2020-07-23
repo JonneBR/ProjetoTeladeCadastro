@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,900&display=swap');
+
+body {
+  background-image: url('/BackgroundImage/backgroundImage.jpg');
+  background-size: 100%;
+  color: #fff;
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10vh;
+  margin: 80px;
+}
+
+.container {
+  border-radius: 5px;
+  border: rgb(228, 56, 56);
+  border-style: solid;
+  border-width: 2px;
+  width: 450px;
+}
+
+h2 {
+  text-align: center;
+  background-color: rgb(228, 56, 56);
+  border-radius: 10px;
+  font-size: 35px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin: 0 10 10px;
+}
+
+form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+#usuario {
+  background-image: url('icones/userIcon.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 5px 12px;
+  padding: 12px 20px 12px 40px;
+  left: 10px;
+}
+
+#email {
+  background-image: url('icones/emailIcon.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  padding: 12px 20px 12px 40px;
+  left: 10px;
+}
+
+#senha {
+  background-image: url('icones/padlockIcon2.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  padding: 12px 20px 12px 40px;
+  left: 10px;
+}
+
+#senhaRepetir {
+  background-image: url('icones/padlockIcon2.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: 5px 10px;
+  padding: 12px 20px 12px 40px;
+  left: 10px;
+}
+.form-control input {
+  color: black;
+  background-color: white(80, 80, 80);
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: solid 0;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+button {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  font-size: 35px;
+  background-color: rgb(228, 56, 56);
+}
