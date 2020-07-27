@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,900&display=swap');
 
 body {
-  background-image: url('/BackgroundImage/backgroundImage.jpg');
+  background-image: url('backgroundImage/backgroundImage.jpg');
   background-size: 100%;
   color: #fff;
   font-family: 'Source Code Pro', monospace;
