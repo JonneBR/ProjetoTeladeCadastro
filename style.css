@@ -34,7 +34,7 @@ body {
   visibility: hidden;
 }
 
-.form-control.error small {
+.form-control.CadastroFalhou small {
   visibility: visible;
 }
 

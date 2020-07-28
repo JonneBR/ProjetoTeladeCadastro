@@ -5,9 +5,14 @@ const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const confirmarSenha = document.getElementById('senhaRepetir');
 
-function exibirCamposIncorretos(inputsIncorretos) {
-  const formcontrol = inputsIncorretos.parentElement;
-  formcontrol.className = 'form-control CadastroFalhou';
+function exibirCamposIncorretos(inputsIncorretos, mensagem) {
+  const formControl = inputsIncorretos.parentElement;
+  formControl.className = 'form-control CadastroFalhou';
+
+  const mensagemErro = formControl.querySelector('small');
+  mensagemErro.innerText = mensagem;
+
+  //console.log(mensagemErro);
 }
 
 function exibirCamposCorretos(inputsCorretos) {
@@ -16,13 +21,20 @@ function exibirCamposCorretos(inputsCorretos) {
   //console.log(formControl);
 }
 
+function nomeDoInput(inputUsuario) {
+  return inputUsuario.id.charAt(0).toUpperCase() + inputUsuario.id.slice(1);
+}
+
 function checarCampos(inputUsuario) {
   //console.log(inputUsuario);
   inputUsuario.forEach(function (inputUsuario) {
     //console.log(inputUsuario.value.trim());
     if (inputUsuario.value.trim() === '') {
-      exibirCamposIncorretos(inputUsuario);
-      console.log('Erro');
+      exibirCamposIncorretos(
+        inputUsuario,
+        `O campo ${nomeDoInput(inputUsuario)} é obrigatório`
+      );
+      //console.log('Erro');
     } else {
       exibirCamposCorretos(inputUsuario);
     }
