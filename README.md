@@ -7,8 +7,8 @@ Front-end com os campos que serão preenchidos pelo usuário.
 All inputs with success border and ready to submit.</br>
 Todos os dados prontos e válidados para o cadastro.
 ![](Screenshots/screenshot2.png)</br>
-Password must match to proceed.</br>
-As senhas precisam ser iguais.
+Password must match otherwise red border show up.</br>
+As senhas precisam ser iguais, caso contrário, um alerta de erro aparecerá.
 ![](Screenshots/screenshot3.png)</br>
 Must enter some data in order to continue with the validation.</br>
 É necessário entrar com os dados para que o cadastro possa ser validado.
