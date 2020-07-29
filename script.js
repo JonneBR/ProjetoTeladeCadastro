@@ -7,6 +7,7 @@ const confirmarSenha = document.getElementById('senhaRepetir');
 
 function exibirCamposIncorretos(inputsIncorretos, mensagem) {
   const formControl = inputsIncorretos.parentElement;
+  //console.log(formControl.className);
   formControl.className = 'form-control CadastroFalhou';
 
   const mensagemErro = formControl.querySelector('small');
@@ -23,6 +24,20 @@ function exibirCamposCorretos(inputsCorretos) {
 
 function nomeDoInput(inputUsuario) {
   return inputUsuario.id.charAt(0).toUpperCase() + inputUsuario.id.slice(1);
+}
+
+//Check if passwords match
+//Checa se senhas são iguais
+function checarSenhasIguais(senha, senhaConfirmar) {
+  if (senha.value !== senhaConfirmar.value) {
+    exibirCamposIncorretos(senha, `As senhas não são iguais`);
+    exibirCamposIncorretos(senhaConfirmar, `As senhas não são iguais`);
+  }
+  // if (senha.value === '' && senhaConfirmar.value === '') {
+  //   checarCampos([senha, senhaConfirmar]);// }
+  else {
+    exibirCamposCorretos(senha);
+  }
 }
 
 function checarCampos(inputUsuario) {
@@ -46,4 +61,5 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   checarCampos([usuario, email, senha, confirmarSenha]);
+  checarSenhasIguais(senha, confirmarSenha);
 });
