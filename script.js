@@ -22,7 +22,6 @@ function exibirCamposCorretos(inputsCorretos) {
 }
 
 function qtCaracteresUsuario(usuario) {
-  console.log(usuario.value.length);
   if (usuario.value.length < 4 && usuario.value.length !== 0) {
     exibirCamposIncorretos(usuario, `O Usuário deve ter mais de 3 caracteres`);
   } else if (usuario.value.length === 0) {
