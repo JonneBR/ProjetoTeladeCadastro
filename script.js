@@ -1,5 +1,4 @@
 const form = document.getElementById('form');
-
 const usuario = document.getElementById('usuario');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
@@ -20,6 +19,16 @@ function exibirCamposCorretos(inputsCorretos) {
   const formControl = inputsCorretos.parentElement;
   formControl.className = 'form-control CadastroSucesso';
   //console.log(formControl);
+}
+
+function validarEmail(email) {
+  const validadorEmail = /\S+@\S+/;
+  if (validadorEmail.test(String(email.value).toLocaleLowerCase()) === true) {
+    exibirCamposCorretos(email);
+    return email;
+  } else {
+    exibirCamposIncorretos(email, `O email não corresponde.`);
+  }
 }
 
 function nomeDoInput(inputUsuario) {
@@ -61,5 +70,6 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   checarCampos([usuario, email, senha, confirmarSenha]);
+  validarEmail(email);
   checarSenhasIguais(senha, confirmarSenha);
 });
