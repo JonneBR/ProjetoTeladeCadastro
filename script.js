@@ -21,6 +21,16 @@ function exibirCamposCorretos(inputsCorretos) {
   //console.log(formControl);
 }
 
+function qtCaracteresUsuario(usuario) {
+  console.log(usuario.value.length);
+  if (usuario.value.length < 4 && usuario.value.length !== 0) {
+    exibirCamposIncorretos(usuario, `O Usuário deve ter mais de 3 caracteres`);
+  } else if (usuario.value.length === 0) {
+  } else {
+    exibirCamposCorretos(usuario);
+  }
+}
+
 function validarEmail(email) {
   const validadorEmail = /\S+@\S+/;
   if (validadorEmail.test(String(email.value).toLocaleLowerCase()) === true) {
@@ -71,6 +81,7 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   checarCampos([usuario, email, senha, confirmarSenha]);
+  qtCaracteresUsuario(usuario);
   validarEmail(email);
   checarSenhasIguais(senha, confirmarSenha);
 });
