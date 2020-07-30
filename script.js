@@ -26,8 +26,9 @@ function validarEmail(email) {
   if (validadorEmail.test(String(email.value).toLocaleLowerCase()) === true) {
     exibirCamposCorretos(email);
     return email;
+  } else if (email.value === '') {
   } else {
-    exibirCamposIncorretos(email, `O email não corresponde.`);
+    exibirCamposIncorretos(email, `O Email não corresponde`);
   }
 }
 
