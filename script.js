@@ -41,6 +41,21 @@ function validarEmail(email) {
   }
 }
 
+function qtCaracteresSenha(senha, senhaConfirmar) {
+  if (senha.value.length > 4 && senhaConfirmar.value.length > 4) {
+    checarSenhasIguais(senha, senhaConfirmar);
+  } else {
+    exibirCamposIncorretos(
+      senha,
+      `O campo Senha deve possuir mais de 4 caracteres`
+    );
+    exibirCamposIncorretos(
+      senhaConfirmar,
+      `O campo Senha deve possuir mais de 4 caracteres`
+    );
+  }
+}
+
 function nomeDoInput(inputUsuario) {
   return inputUsuario.id.charAt(0).toUpperCase() + inputUsuario.id.slice(1);
 }
@@ -51,11 +66,9 @@ function checarSenhasIguais(senha, senhaConfirmar) {
   if (senha.value !== senhaConfirmar.value) {
     exibirCamposIncorretos(senha, `As senhas não são iguais`);
     exibirCamposIncorretos(senhaConfirmar, `As senhas não são iguais`);
-  }
-  // if (senha.value === '' && senhaConfirmar.value === '') {
-  //   checarCampos([senha, senhaConfirmar]);// }
-  else {
+  } else {
     exibirCamposCorretos(senha);
+    exibirCamposCorretos(senhaConfirmar);
   }
 }
 
@@ -82,5 +95,5 @@ form.addEventListener('submit', function (e) {
   checarCampos([usuario, email, senha, confirmarSenha]);
   qtCaracteresUsuario(usuario);
   validarEmail(email);
-  checarSenhasIguais(senha, confirmarSenha);
+  qtCaracteresSenha(senha, confirmarSenha);
 });
